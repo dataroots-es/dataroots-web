@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>DataRoots | Captura de datos por WhatsApp, OCR de albaranes y datos en tiempo real</title>
+<meta name="description" content="Captura de datos por WhatsApp, OCR de albaranes, lectura de contadores por foto e integración con ERP. Datos de planta en tiempo real en Power BI. Agro, industria y almacén.">
+<!-- Fuente Inter (la misma que usa la página publicada) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<!-- Favicon: sustituir por el logo de DataRoots cuando lo tengas -->
+<style>html,body{margin:0;padding:0}</style>
+<link rel="canonical" href="https://dataroots.es/">
+<meta name="robots" content="index, follow">
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_ES">
+<meta property="og:site_name" content="DataRoots">
+<meta property="og:url" content="https://dataroots.es/">
+<meta property="og:title" content="DataRoots | Captura de datos por WhatsApp, OCR de albaranes y datos en tiempo real">
+<meta property="og:description" content="Captura de datos por WhatsApp, OCR de albaranes, lectura de contadores de agua por foto e integración con tu ERP. Cuadros de mando Power BI en tiempo real.">
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="DataRoots | Captura de datos por WhatsApp y OCR de albaranes">
+<meta name="twitter:description" content="Datos de planta en tiempo real: captura por WhatsApp, OCR de albaranes, lectura de contadores por foto e integración con ERP.">
+<!-- Datos estructurados -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://dataroots.es/#org",
+      "name": "DataRoots",
+      "url": "https://dataroots.es/",
+      "email": "info@dataroots.es",
+      "telephone": "+34 644 53 81 73",
+      "sameAs": ["https://www.linkedin.com/company/dataroots-es"],
+      "areaServed": ["ES", "PT"],
+      "description": "Captura de datos operativos no reglados y analítica en tiempo real para agro, industria, almacén y mantenimiento."
+    },
+    {"@type": "Service", "name": "Captura de datos por WhatsApp y Telegram", "description": "Conversión de mensajes, notas de voz y fotos en datos estructurados y validados contra maestros.", "provider": {"@id": "https://dataroots.es/#org"}, "areaServed": ["ES", "PT"]},
+    {"@type": "Service", "name": "OCR de albaranes y digitalización de almacén", "description": "Foto del albarán, OCR y validación: stock actualizado en minutos con evidencia completa.", "provider": {"@id": "https://dataroots.es/#org"}, "areaServed": ["ES", "PT"]},
+    {"@type": "Service", "name": "Lectura de contadores de agua por foto", "description": "Lectura automática de contadores de riego a partir de fotos enviadas por WhatsApp.", "provider": {"@id": "https://dataroots.es/#org"}, "areaServed": ["ES", "PT"]},
+    {"@type": "Service", "name": "Integración con ERP", "description": "Integración de los datos capturados con ERPs como Microsoft Dynamics AX y otras fuentes (Excel, APIs, correos).", "provider": {"@id": "https://dataroots.es/#org"}, "areaServed": ["ES", "PT"]},
+    {"@type": "Service", "name": "Cuadros de mando Power BI en tiempo real", "description": "Analítica y alertas con un único dato oficial, reporting automático y corrección auditada.", "provider": {"@id": "https://dataroots.es/#org"}, "areaServed": ["ES", "PT"]}
+  ]
+}
+</script>
+</head>
+<body>
+<div data-elementor-type="wp-page" data-elementor-id="931" class="elementor elementor-931">
+						<section class="elementor-section elementor-top-section elementor-element elementor-element-b33d0b1 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="b33d0b1" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-cca9a4f" data-id="cca9a4f" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-6caf7f4 elementor-widget elementor-widget-html" data-id="6caf7f4" data-element_type="widget" data-widget_type="html.default">
+				<div class="elementor-widget-container">
+					<style>
+  :root{
+    --bg:#f4f7fb;--bg-soft:#eef3f9;--card:#ffffff;--ink:#0d1b2a;--ink-2:#33485f;--muted:#6b7d92;
+    --line:#e3eaf2;--line-2:#d5e0ec;--blue:#2f6bff;--blue-soft:#eaf0ff;--green:#11b07a;--green-soft:#e4f7ef;
+    --teal:#16b8c8;--violet:#7c5cff;--amber:#f7a93b;
+    --ink-grad:linear-gradient(120deg,#0d1b2a,#16324f);
+    --radius:18px;--shadow:0 10px 30px -12px rgba(13,27,42,.18);--shadow-sm:0 4px 14px -6px rgba(13,27,42,.16);
+    --max:1160px;--font:'Inter','Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--font);background:var(--bg);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
+  .eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:.76rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--blue);background:var(--blue-soft);padding:6px 12px;border-radius:99px}
+  .eyebrow.g{color:var(--green);background:var(--green-soft)}
+  h2.title{font-size:clamp(1.7rem,3.6vw,2.6rem);line-height:1.12;font-weight:800;letter-spacing:-1px;margin-top:18px}
+  .lead{color:var(--ink-2);font-size:1.1rem;max-width:700px;margin-top:14px}
+  .b{font-weight:600}.gr{color:var(--green)}.bl{color:var(--blue)}
+
+  /* NAV */
+  header.nav{position:sticky;top:0;z-index:50;background:rgba(244,247,251,.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+  .nav-in{display:flex;align-items:center;justify-content:space-between;height:70px}
+  .brand{display:flex;align-items:center;gap:11px;font-weight:800;font-size:1.2rem;letter-spacing:-.4px}
+  .brand .logo{width:32px;height:32px;flex:0 0 auto}
+  .brand small{display:block;font-size:.6rem;font-weight:600;letter-spacing:.14em;color:var(--muted);text-transform:uppercase}
+  .nav-links{display:flex;gap:26px;align-items:center;font-size:.93rem;color:var(--ink-2);font-weight:500}
+  .nav-links a:hover{color:var(--blue)}
+  .nav-cta{background:var(--ink);color:#fff;font-weight:600;padding:11px 20px;border-radius:10px;font-size:.9rem;transition:.2s}
+  .nav-cta:hover{background:var(--blue)}
+  @media(max-width:980px){.nav-links{display:none}}
+
+  /* HERO */
+  .hero{padding:66px 0 56px}
+  .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:54px;align-items:center}
+  .hero h1{font-size:clamp(2rem,4.6vw,3.35rem);line-height:1.07;font-weight:800;letter-spacing:-1.6px}
+  .hero h1 .bl{background:linear-gradient(100deg,var(--blue),var(--teal));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+  .hero p.sub{color:var(--ink-2);font-size:1.16rem;max-width:560px;margin:22px 0 26px}
+  .verbs{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 26px}
+  .verbs span{font-size:.84rem;font-weight:700;color:var(--ink);background:var(--card);border:1px solid var(--line-2);border-radius:99px;padding:7px 15px}
+  .verbs span b{color:var(--blue)}
+  .verbs .plus{color:var(--green);align-self:center;font-weight:800}
+  .btns{display:flex;flex-wrap:wrap;gap:13px}
+  .btn{display:inline-flex;align-items:center;gap:9px;font-weight:600;border-radius:11px;padding:14px 24px;font-size:1rem;transition:.2s;cursor:pointer;border:0}
+  .btn-primary{background:var(--blue);color:#fff;box-shadow:0 8px 20px -8px rgba(47,107,255,.6)}
+  .btn-primary:hover{transform:translateY(-2px)}
+  .btn-wa{background:var(--green-soft);color:#0b7d56;border:1px solid #bfe9d6}
+  .btn-wa:hover{background:#d3f1e4}
+  .btn-ghost{background:#fff;color:var(--ink);border:1px solid var(--line-2)}
+  .btn-ghost:hover{border-color:var(--blue);color:var(--blue)}
+  .trustline{display:flex;align-items:center;gap:9px;margin-top:24px;font-size:.9rem;color:var(--muted);flex-wrap:wrap}
+  .trustline .dot{width:8px;height:8px;border-radius:99px;background:var(--green)}
+
+  .dash{background:var(--card);border:1px solid var(--line);border-radius:20px;box-shadow:var(--shadow);padding:18px;position:relative}
+  .dash:before{content:"";position:absolute;inset:-30px -30px auto auto;width:180px;height:180px;background:radial-gradient(circle,rgba(47,107,255,.18),transparent 70%);z-index:-1}
+  .dash-top{display:flex;align-items:center;justify-content:space-between;padding:4px 6px 14px}
+  .dash-top .t{font-size:.82rem;font-weight:700;color:var(--ink-2)}
+  .dash-top .live{font-size:.68rem;font-weight:700;color:var(--green);display:flex;align-items:center;gap:6px}
+  .dash-top .live i{width:7px;height:7px;border-radius:99px;background:var(--green);display:inline-block;animation:pulse 1.6s infinite}
+  @keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
+  .kpi-row{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:12px}
+  .kpi-tile{background:var(--bg-soft);border:1px solid var(--line);border-radius:12px;padding:12px}
+  .kpi-tile .l{font-size:.64rem;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;font-weight:600}
+  .kpi-tile .v{font-size:1.25rem;font-weight:800;margin-top:3px}
+  .kpi-tile .d{font-size:.66rem;font-weight:700;color:var(--green)}
+  .chart-card{background:var(--bg-soft);border:1px solid var(--line);border-radius:12px;padding:14px 14px 8px}
+  .chart-card .ch-h{display:flex;justify-content:space-between;font-size:.72rem;color:var(--muted);font-weight:600;margin-bottom:6px}
+  .bars{display:flex;align-items:flex-end;gap:8px;height:84px;padding-top:6px}
+  .bars .bar{flex:1;border-radius:5px 5px 0 0;background:linear-gradient(180deg,var(--blue),#6f97ff)}
+  .bars .bar.g{background:linear-gradient(180deg,var(--green),#4fd6a6)}
+  @media(max-width:900px){.hero-grid{grid-template-columns:1fr;gap:38px}.dash{max-width:520px}}
+
+  /* metric stripe */
+  .stripe{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--card)}
+  .stripe-in{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;padding:30px 0;text-align:center}
+  .stat .n{font-size:2rem;font-weight:800;letter-spacing:-1px}
+  .stat .n .u{font-size:1.1rem;color:var(--blue)}
+  .stat .c{font-size:.86rem;color:var(--muted);margin-top:2px}
+  @media(max-width:760px){.stripe-in{grid-template-columns:repeat(2,1fr);gap:26px}}
+
+  .sec{padding:84px 0}
+  .sec.alt{background:var(--card);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .sec.dark{background:var(--ink-grad);color:#fff}
+  .sec-head{max-width:740px;margin-bottom:50px}
+  .sec.dark .lead{color:#c7d6e6}
+  .sec.dark .eyebrow{background:rgba(255,255,255,.1);color:#9ad4ff}
+
+  /* PROBLEM */
+  .pains{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+  .pain{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:24px 22px;box-shadow:var(--shadow-sm)}
+  .pain .ic{width:42px;height:42px;border-radius:11px;display:flex;align-items:center;justify-content:center;background:#fff1ee;color:#e06a4f;font-size:1.2rem;margin-bottom:14px}
+  .pain h4{font-size:1.02rem;margin-bottom:6px}
+  .pain p{font-size:.9rem;color:var(--muted)}
+  .pull{margin-top:28px;text-align:center;font-size:1.2rem;font-weight:700;padding:22px;border-radius:var(--radius);background:var(--ink-grad);color:#fff}
+  .pull .amber{color:var(--amber)}
+  @media(max-width:880px){.pains{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:500px){.pains{grid-template-columns:1fr}}
+
+  /* METHODOLOGY band */
+  .method{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-bottom:14px}
+  .mphase{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.12);padding:26px 22px;position:relative}
+  .method .mphase:first-child{border-radius:var(--radius) 0 0 var(--radius)}
+  .method .mphase:last-child{border-radius:0 var(--radius) var(--radius) 0}
+  .mphase .mp-n{font-size:.72rem;font-weight:700;color:#7fd9ff;letter-spacing:.1em}
+  .mphase h3{font-size:1.32rem;font-weight:800;margin:8px 0 6px}
+  .mphase p{font-size:.88rem;color:#bccadb}
+  .mphase .mp-ar{position:absolute;right:-11px;top:50%;transform:translateY(-50%);z-index:2;width:22px;height:22px;border-radius:99px;background:#16324f;border:1px solid rgba(255,255,255,.2);display:flex;align-items:center;justify-content:center;color:#7fd9ff;font-size:.8rem}
+  .method .mphase:last-child .mp-ar{display:none}
+  .loop-note{display:flex;align-items:center;justify-content:center;gap:12px;background:rgba(17,176,122,.14);border:1px solid rgba(79,214,166,.35);border-radius:99px;padding:12px 22px;font-size:.95rem;color:#dff5ec;max-width:560px;margin:6px auto 0;text-align:center}
+  .loop-note b{color:#7ff0c3}
+  @media(max-width:880px){.method{grid-template-columns:1fr 1fr}.method .mphase{border-radius:0!important}.mphase .mp-ar{display:none!important}}
+  @media(max-width:520px){.method{grid-template-columns:1fr}}
+
+  /* execution pipeline */
+  .exec-h{font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:#9fb3c7;font-weight:700;text-align:center;margin:46px 0 18px}
+  .pipe{display:grid;grid-template-columns:repeat(6,1fr);gap:10px}
+  .pstep{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:13px;padding:18px 14px}
+  .pstep .pn{width:28px;height:28px;border-radius:8px;background:rgba(47,107,255,.25);color:#9bc0ff;font-weight:800;display:flex;align-items:center;justify-content:center;font-size:.88rem;margin-bottom:10px}
+  .pstep:nth-child(n+5) .pn{background:rgba(17,176,122,.25);color:#7ff0c3}
+  .pstep .tool{font-size:.62rem;letter-spacing:.04em;text-transform:uppercase;color:#8fa3b8;font-weight:700;margin-bottom:4px}
+  .pstep h4{font-size:.92rem;margin-bottom:5px;letter-spacing:-.3px}
+  .pstep p{font-size:.78rem;color:#aebccd}
+  @media(max-width:980px){.pipe{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:520px){.pipe{grid-template-columns:1fr}}
+
+  /* SECTORS */
+  .sectors{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+  .sector{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:26px;box-shadow:var(--shadow-sm);transition:.2s}
+  .sector:hover{transform:translateY(-3px);border-color:var(--line-2)}
+  .sector .s-top{display:flex;align-items:center;gap:13px;margin-bottom:14px}
+  .sector .s-ic{width:46px;height:46px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.35rem;flex:0 0 auto}
+  .sector.agro .s-ic{background:var(--green-soft)}
+  .sector.ind .s-ic{background:var(--blue-soft)}
+  .sector.alm .s-ic{background:#fff4e3}
+  .sector.man .s-ic{background:#efeaff}
+  .sector h3{font-size:1.18rem;font-weight:800}
+  .sector .s-sub{font-size:.82rem;color:var(--muted)}
+  .sector .s-flow{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin:6px 0 14px}
+  .sector .s-flow .chip{font-size:.78rem;background:var(--bg-soft);border:1px solid var(--line);border-radius:8px;padding:6px 10px;color:var(--ink-2)}
+  .sector .s-flow .ar{color:var(--muted);font-size:.8rem}
+  .sector .s-out{font-size:.9rem;color:var(--ink-2)}
+  .sector .s-out b{color:var(--ink)}
+  @media(max-width:780px){.sectors{grid-template-columns:1fr}}
+
+  /* MODULES */
+  .core-wrap{display:grid;grid-template-columns:1fr 2fr;gap:20px;align-items:stretch}
+  .core{background:var(--ink-grad);color:#fff;border-radius:var(--radius);padding:34px 28px;display:flex;flex-direction:column;justify-content:center}
+  .core .badge{font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:#7fd9ff;font-weight:700}
+  .core h3{font-size:1.7rem;font-weight:800;margin:8px 0}
+  .core p{font-size:.92rem;color:#c7d6e6}
+  .modules{display:grid;grid-template-columns:repeat(2,1fr);gap:13px}
+  .mod{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px;display:flex;gap:13px;align-items:flex-start;box-shadow:var(--shadow-sm);transition:.2s}
+  .mod:hover{transform:translateY(-3px);border-color:var(--line-2)}
+  .mod .mi{width:38px;height:38px;border-radius:10px;display:flex;align-items:center;justify-content:center;background:var(--blue-soft);color:var(--blue);font-size:1.1rem;flex:0 0 auto}
+  .mod:nth-child(even) .mi{background:var(--green-soft);color:var(--green)}
+  .mod h5{font-size:.97rem;margin-bottom:2px}
+  .mod p{font-size:.83rem;color:var(--muted)}
+  @media(max-width:880px){.core-wrap{grid-template-columns:1fr}.modules{grid-template-columns:1fr}}
+
+  /* WOW */
+  .wow{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  .wcard{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:24px;box-shadow:var(--shadow-sm);transition:.2s}
+  .wcard:hover{transform:translateY(-3px)}
+  .wcard .wi{font-size:1.1rem;width:40px;height:40px;border-radius:10px;background:var(--green-soft);color:var(--green);display:flex;align-items:center;justify-content:center;margin-bottom:12px}
+  .wcard h4{font-size:1.04rem;margin-bottom:6px}
+  .wcard p{font-size:.9rem;color:var(--muted)}
+  @media(max-width:880px){.wow{grid-template-columns:1fr}}
+
+  /* KPIs */
+  .kpis{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+  .kpi-col{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:28px;box-shadow:var(--shadow-sm)}
+  .kpi-col h4{font-size:.76rem;letter-spacing:.1em;text-transform:uppercase;margin-bottom:18px;display:flex;align-items:center;gap:8px}
+  .kpi-col h4 .tag{width:9px;height:9px;border-radius:3px}
+  .kpi-col.op h4 .tag{background:var(--blue)}
+  .kpi-col.gov h4 .tag{background:var(--green)}
+  .kpi-col li{list-style:none;padding:12px 0;border-bottom:1px solid var(--line);font-size:.94rem;color:var(--ink-2);display:flex;justify-content:space-between;align-items:center;gap:14px}
+  .kpi-col li:last-child{border-bottom:0}
+  .kpi-col li .spark{width:70px;height:22px;flex:0 0 auto}
+  @media(max-width:880px){.kpis{grid-template-columns:1fr}}
+
+  /* COLLAB */
+  .plans{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;align-items:stretch}
+  .plan{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:30px 26px;display:flex;flex-direction:column;box-shadow:var(--shadow-sm)}
+  .plan.feat{border:1px solid var(--blue);box-shadow:0 16px 40px -18px rgba(47,107,255,.45)}
+  .plan .tag{font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:700}
+  .plan.feat .tag{color:var(--blue)}
+  .plan .name{font-size:1.3rem;font-weight:800;margin:6px 0 2px}
+  .plan .scope{font-size:.86rem;color:var(--muted);margin-bottom:16px}
+  .plan .price{font-size:1.05rem;font-weight:800;color:var(--ink);margin:0 0 18px;display:flex;align-items:baseline;gap:8px}
+  .plan .price small{font-size:.72rem;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.08em}
+  .plan ul{list-style:none;flex:1;margin-bottom:22px}
+  .plan li{font-size:.88rem;color:var(--ink-2);padding:7px 0 7px 24px;position:relative}
+  .plan li:before{content:"";position:absolute;left:0;top:13px;width:13px;height:13px;border-radius:99px;background:var(--green-soft);box-shadow:inset 0 0 0 2px var(--green)}
+  .plan .pbtn{text-align:center;border-radius:10px;padding:12px;font-weight:600;font-size:.92rem;background:var(--bg-soft);border:1px solid var(--line-2)}
+  .plan.feat .pbtn{background:var(--blue);color:#fff;border-color:var(--blue)}
+  .ribbon{font-size:.68rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--blue);margin-bottom:10px}
+  @media(max-width:880px){.plans{grid-template-columns:1fr}}
+
+  /* ENFOQUE */
+  .trust{display:grid;grid-template-columns:1.1fr .9fr;gap:42px;align-items:center;background:var(--ink-grad);border-radius:20px;padding:48px;color:#fff;position:relative}
+  .trust .eyebrow{background:rgba(255,255,255,.1);color:#9ad4ff}
+  .trust h3{font-size:1.7rem;font-weight:800;line-height:1.2;margin-top:16px}
+  .trust h3 .gr{color:#4fd6a6}
+  .trust p{color:#c7d6e6;margin-top:14px;font-size:1rem}
+  .trust .tags{display:flex;flex-wrap:wrap;gap:9px;margin-top:20px}
+  .trust .tags span{font-size:.8rem;border:1px solid rgba(255,255,255,.18);border-radius:99px;padding:6px 14px;color:#c7d6e6}
+  .trust .btn-ghost{background:transparent;border-color:rgba(255,255,255,.3);color:#fff;margin-top:24px}
+  .trust .btn-ghost:hover{border-color:#fff;background:rgba(255,255,255,.08);color:#fff}
+  .merge{text-align:center}
+  .merge .big{font-size:2.5rem;font-weight:800;letter-spacing:-1px}
+  .merge .big .plus{color:#4fd6a6;font-weight:300;margin:0 6px}
+  .merge .cap{color:#9fb3c7;font-size:.9rem;margin-top:10px}
+  @media(max-width:880px){.trust{grid-template-columns:1fr;padding:32px;text-align:center}.trust .tags{justify-content:center}}
+
+  /* CTA */
+  .cta{padding:90px 0;background:radial-gradient(120% 90% at 50% 0,var(--blue-soft),var(--bg) 60%);text-align:center}
+  .cta h2{font-size:clamp(1.8rem,4vw,2.7rem);font-weight:800;letter-spacing:-.8px;max-width:18ch;margin:14px auto 0}
+  .cta p{color:var(--ink-2);max-width:560px;margin:16px auto 0;font-size:1.06rem}
+  .steps3{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;margin:32px 0 36px}
+  .steps3 .s{background:var(--card);border:1px solid var(--line);border-radius:13px;padding:14px 22px;font-size:.86rem;color:var(--muted);box-shadow:var(--shadow-sm)}
+  .steps3 .s b{display:block;color:var(--ink);font-size:1rem;margin-bottom:2px}
+  .form{max-width:580px;margin:0 auto;text-align:left;background:var(--card);border:1px solid var(--line);border-radius:20px;padding:32px;box-shadow:var(--shadow)}
+  .form .row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .form label{font-size:.82rem;color:var(--ink-2);font-weight:600;display:block;margin:14px 0 6px}
+  .form input,.form textarea{width:100%;background:var(--bg-soft);border:1px solid var(--line-2);border-radius:10px;padding:12px 14px;color:var(--ink);font-family:inherit;font-size:.95rem}
+  .form input:focus,.form textarea:focus{outline:none;border-color:var(--blue);background:#fff}
+  .form .btn-primary{width:100%;justify-content:center;margin-top:22px}
+  .or{margin:20px 0;color:var(--muted);font-size:.86rem;text-align:center}
+  @media(max-width:560px){.form .row{grid-template-columns:1fr}}
+
+  /* FOOTER */
+  footer{border-top:1px solid var(--line);padding:48px 0 36px;background:var(--card)}
+  .foot{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap}
+  .foot .col p{color:var(--muted);font-size:.9rem;max-width:320px;margin-top:12px}
+  .foot .social{display:flex;gap:12px;margin-top:16px}
+  .foot .social a{width:36px;height:36px;border:1px solid var(--line);border-radius:9px;display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:.76rem;font-weight:700}
+  .foot .social a:hover{border-color:var(--blue);color:var(--blue)}
+  .foot-links{display:flex;flex-direction:column;gap:9px;font-size:.9rem;color:var(--muted)}
+  .foot-links strong{color:var(--ink);margin-bottom:4px}
+  .foot-links a:hover{color:var(--blue)}
+  .copy{margin-top:34px;padding-top:20px;border-top:1px solid var(--line);font-size:.82rem;color:var(--muted);display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+  .ph{color:var(--amber)}
+
+.sec.dark h1,.sec.dark h2,.sec.dark h3,.sec.dark h4,.sec.dark h5,.sec.dark h6,.sec.dark .title{color:#fff}
+
+.core h1,.core h2,.core h3,.core h4,.core h5,.core h6,.core .title,.trust h1,.trust h2,.trust h3,.trust h4,.trust h5,.trust h6,.trust .title{color:#fff}
+</style>
+
+<!-- NAV -->
+<header class="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="#top">
+      <svg class="logo" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+        <rect x="4" y="17" width="4.2" height="9" rx="1.4" fill="#2f6bff"/>
+        <rect x="10.5" y="12" width="4.2" height="14" rx="1.4" fill="#16b8c8"/>
+        <rect x="17" y="14" width="4.2" height="12" rx="1.4" fill="#11b07a"/>
+        <rect x="23.5" y="8" width="4.2" height="18" rx="1.4" fill="#11b07a"/>
+      </svg>
+      <span>Data<span class="gr">Roots</span></span>
+    </a>
+    <nav class="nav-links">
+      <a href="#reto">El reto</a>
+      <a href="#metodologia">Metodología</a>
+      <a href="#sectores">Sectores</a>
+      <a href="#plataforma">Plataforma</a>
+      <a href="#modelos">Colaboración</a>
+    </nav>
+    <a class="nav-cta" href="#contacto">Hablar con un experto</a>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow">● Metodología DataRoots</span>
+      <h1>La metodología que convierte tus datos dispersos en <span class="bl">decisiones</span> en tiempo real.</h1>
+      <p class="sub">Capturamos los datos de tu operación por WhatsApp y Telegram —texto, voz, fotos, Excel—, los estandarizamos contra tus maestros y tu ERP, y los convertimos en análisis y acción. Un mismo método para <b>agro, industria, almacén y mantenimiento</b>.</p>
+      <div class="verbs">
+        <span><b>Capturar</b></span><span class="plus">→</span>
+        <span><b>Estandarizar</b></span><span class="plus">→</span>
+        <span><b>Analizar</b></span><span class="plus">→</span>
+        <span><b>Actuar</b></span><span class="plus">↻</span>
+      </div>
+      <div class="btns">
+        <a class="btn btn-primary" href="#contacto">Hablar con un experto →</a>
+        <a class="btn btn-wa" href="https://wa.me/34644538173" target="_blank" rel="noopener">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.8 4.9-1.3A10 10 0 1 0 12 2Zm5.3 14.2c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .3-3.5-.7-2.9-1.2-4.7-4.2-4.9-4.4-.1-.2-1.1-1.5-1.1-2.8s.7-2 .9-2.3c.2-.2.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.4.6c-.2.2-.3.4-.1.7.2.3.9 1.4 1.9 2.3 1.3 1.1 2.3 1.5 2.6 1.6.2.1.4.1.6-.1l.9-1c.2-.2.4-.2.6-.1l1.9.9c.3.2.5.2.5.4.1.2.1.9-.1 1.3Z"/></svg>
+          WhatsApp
+        </a>
+      </div>
+      <div class="trustline"><span class="dot"></span> Captura no reglada · DataLake · BI · automatización · trazabilidad y ciclo cerrado</div>
+    </div>
+
+    <div class="dash" aria-hidden="true">
+      <div class="dash-top">
+        <span class="t">Cuadro de mando · tiempo real</span>
+        <span class="live"><i></i> EN VIVO</span>
+      </div>
+      <div class="kpi-row">
+        <div class="kpi-tile"><div class="l">Tiempo de cierre</div><div class="v">2.4<span style="font-size:.8rem"> h</span></div><div class="d">▼ 71%</div></div>
+        <div class="kpi-tile"><div class="l">Errores / mes</div><div class="v">12</div><div class="d">▼ 64%</div></div>
+        <div class="kpi-tile"><div class="l">Dato a tiempo</div><div class="v">98<span style="font-size:.8rem">%</span></div><div class="d">▲ 33%</div></div>
+      </div>
+      <div class="chart-card">
+        <div class="ch-h"><span>Desviación: detectada vs. corregida</span><span>6M</span></div>
+        <svg viewBox="0 0 320 90" width="100%" height="96" preserveAspectRatio="none">
+          <defs><linearGradient id="ar" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#2f6bff" stop-opacity=".25"/><stop offset="1" stop-color="#2f6bff" stop-opacity="0"/></linearGradient></defs>
+          <polyline points="0,70 53,60 106,64 160,42 213,46 266,24 320,18" fill="none" stroke="#2f6bff" stroke-width="2.5"/>
+          <polygon points="0,70 53,60 106,64 160,42 213,46 266,24 320,18 320,90 0,90" fill="url(#ar)"/>
+          <polyline points="0,80 53,74 106,70 160,58 213,52 266,40 320,33" fill="none" stroke="#11b07a" stroke-width="2.5" stroke-dasharray="4 4"/>
+        </svg>
+      </div>
+      <div class="chart-card" style="margin-top:12px">
+        <div class="ch-h"><span>Mensajes procesados por día</span><span>+18%</span></div>
+        <div class="bars">
+          <div class="bar" style="height:40%"></div><div class="bar" style="height:58%"></div>
+          <div class="bar" style="height:48%"></div><div class="bar g" style="height:74%"></div>
+          <div class="bar" style="height:64%"></div><div class="bar g" style="height:88%"></div>
+          <div class="bar" style="height:70%"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- METRIC STRIPE -->
+<div class="stripe">
+  <div class="wrap stripe-in">
+    <div class="stat"><div class="n">&lt;20<span class="u">s</span></div><div class="c">de mensaje a dato registrado</div></div>
+    <div class="stat"><div class="n">100<span class="u">%</span></div><div class="c">trazabilidad: quién, qué y cuándo</div></div>
+    <div class="stat"><div class="n">1</div><div class="c">dato oficial (single source of truth)</div></div>
+    <div class="stat"><div class="n">4</div><div class="c">sectores, un mismo método</div></div>
+  </div>
+</div>
+
+<!-- PROBLEM -->
+<section class="sec" id="reto">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">El reto</span>
+      <h2 class="title">La información vive en conversaciones… <span class="bl">pero el negocio necesita datos.</span></h2>
+      <p class="lead">Da igual el sector: el campo, la planta, el almacén o el equipo de mantenimiento generan muchísimo valor en mensajes sueltos. Pero ese dato llega tarde, mal o no llega — y cuando llega, ya ha pasado.</p>
+    </div>
+    <div class="pains">
+      <div class="pain"><div class="ic">💬</div><h4>Entrada no reglada</h4><p>WhatsApp, notas de voz y fotos: información valiosa atrapada sin estructura ni control.</p></div>
+      <div class="pain"><div class="ic">📑</div><h4>Procesos manuales</h4><p>Excel y correos transcritos a mano. Tiempo perdido, errores y reprocesos constantes.</p></div>
+      <div class="pain"><div class="ic">⏱️</div><h4>Control reactivo</h4><p>Cierres tardíos. Te enteras de la desviación cuando el margen ya se ha perdido.</p></div>
+      <div class="pain"><div class="ic">🔍</div><h4>Sin trazabilidad</h4><p>Difícil de auditar y justificar. ¿Quién cambió qué, cuándo y por qué?</p></div>
+    </div>
+    <div class="pull">Y ahí es donde se pierde <span class="amber">control, tiempo y margen.</span></div>
+  </div>
+</section>
+
+<!-- METHODOLOGY (centerpiece) -->
+<section class="sec dark" id="metodologia">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow g">El corazón de DataRoots</span>
+      <h2 class="title">La Metodología DataRoots</h2>
+      <p class="lead">No es una herramienta, es un método. Cuatro fases que se repiten en bucle hasta cerrar el círculo: el dato no solo se ve, se corrige y se responsabiliza. Lo mismo, funcione donde funcione.</p>
+    </div>
+
+    <div class="method">
+      <div class="mphase">
+        <div class="mp-n">FASE 1</div>
+        <h3>Capturar</h3>
+        <p>Recogemos la entrada no reglada —mensajería, voz, imagen, Excel, APIs— sin pedirle a nadie que cambie cómo trabaja.</p>
+        <div class="mp-ar">→</div>
+      </div>
+      <div class="mphase">
+        <div class="mp-n">FASE 2</div>
+        <h3>Estandarizar</h3>
+        <p>Validamos y normalizamos contra tus maestros (clientes, fincas, productos, centros…) y lo guardamos trazable.</p>
+        <div class="mp-ar">→</div>
+      </div>
+      <div class="mphase">
+        <div class="mp-n">FASE 3</div>
+        <h3>Analizar</h3>
+        <p>Convertimos el dato en cuadros de mando, comparativos, tendencias y alertas. Un único dato oficial.</p>
+        <div class="mp-ar">→</div>
+      </div>
+      <div class="mphase">
+        <div class="mp-n">FASE 4</div>
+        <h3>Actuar</h3>
+        <p>Cada responsable recibe lo suyo, corrige dentro del informe y queda justificado. Se cierra el círculo.</p>
+      </div>
+    </div>
+    <div class="loop-note">↻ <span><b>Ciclo cerrado:</b> automatizamos la captura… pero también la corrección y la responsabilidad.</span></div>
+
+    <div class="exec-h">Cómo se ejecuta · 5 pasos + 0</div>
+    <div class="pipe">
+      <div class="pstep"><div class="pn">0</div><div class="tool">Agente · WhatsApp · OCR</div><h4>Captura</h4><p>Texto, voz e imagen interpretados por IA y validados.</p></div>
+      <div class="pstep"><div class="pn">1</div><div class="tool">ETL · DataLake</div><h4>Estandariza</h4><p>Fuentes normalizadas en un repositorio gobernado.</p></div>
+      <div class="pstep"><div class="pn">2</div><div class="tool">Power BI · DAX</div><h4>Analiza</h4><p>Cuadros de mando y alertas siempre al día.</p></div>
+      <div class="pstep"><div class="pn">3</div><div class="tool">Power Automate</div><h4>Divulga</h4><p>Cada responsable recibe su resumen y escalado.</p></div>
+      <div class="pstep"><div class="pn">4</div><div class="tool">Power Apps</div><h4>Corrige</h4><p>Edita y justifica el dato en el propio informe.</p></div>
+      <div class="pstep"><div class="pn">5</div><div class="tool">Chatbot IA</div><h4>Pregunta</h4><p>Consulta el modelo en lenguaje natural.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTORS -->
+<section class="sec" id="sectores">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Un método, muchos mundos</span>
+      <h2 class="title">El mismo ciclo, <span class="bl">adaptado a tu sector</span></h2>
+      <p class="lead">Donde haya entrada no reglada, unos maestros contra los que validar y necesidad de control, la metodología encaja. Estos son algunos ejemplos de aplicación.</p>
+    </div>
+    <div class="sectors">
+      <div class="sector agro">
+        <div class="s-top"><div class="s-ic">🌱</div><div><h3>Agro</h3><div class="s-sub">Fincas, parcelas, partes de campo y contadores de riego</div></div></div>
+        <div class="s-flow"><span class="chip">Parte de campo por WhatsApp</span><span class="ar">→</span><span class="chip">Validación de parcela/finca</span><span class="ar">→</span><span class="chip">Cuadro de campaña</span></div>
+        <div class="s-out">Labores, tratamientos y rendimientos por parcela, <b>sin papeles ni reescritura</b>, con trazabilidad para auditoría y certificaciones. Incluye la <b>lectura de contadores de agua por foto</b> para el control del riego.</div>
+      </div>
+      <div class="sector ind">
+        <div class="s-top"><div class="s-ic">🏭</div><div><h3>Industria / Producción</h3><div class="s-sub">Partes de producción y control de costes</div></div></div>
+        <div class="s-flow"><span class="chip">Parte de turno</span><span class="ar">→</span><span class="chip">Normalización</span><span class="ar">→</span><span class="chip">Presupuesto vs. real</span></div>
+        <div class="s-out">Captura de datos de planta en tiempo real: desviaciones de producción y coste detectadas <b>el mismo día</b>, con aviso al responsable y gestión por excepción.</div>
+      </div>
+      <div class="sector alm">
+        <div class="s-top"><div class="s-ic">📦</div><div><h3>Almacén y logística</h3><div class="s-sub">OCR de albaranes, recepciones, stock y ubicaciones</div></div></div>
+        <div class="s-flow"><span class="chip">Foto del albarán</span><span class="ar">→</span><span class="chip">OCR + validación</span><span class="ar">→</span><span class="chip">Stock actualizado</span></div>
+        <div class="s-out">Digitalización del almacén con <b>100% de evidencia</b> y stock al día en minutos, sin descarga guiada ni horas administrativas perdidas.</div>
+      </div>
+      <div class="sector man">
+        <div class="s-top"><div class="s-ic">🛠️</div><div><h3>Mantenimiento industrial</h3><div class="s-sub">Partes de trabajo, incidencias y órdenes</div></div></div>
+        <div class="s-flow"><span class="chip">Parte / foto del operario</span><span class="ar">→</span><span class="chip">Orden estandarizada</span><span class="ar">→</span><span class="chip">Disponibilidad de equipos</span></div>
+        <div class="s-out">Incidencias y órdenes con trazabilidad completa y KPIs de disponibilidad de tus equipos.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PLATFORM -->
+<section class="sec alt" id="plataforma">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">La plataforma</span>
+      <h2 class="title">La metodología, <span class="bl">implementada</span>: un Core + 6 módulos</h2>
+      <p class="lead">Un solo núcleo de datos gobernado; los módulos se activan a tu ritmo. Empiezas por un proceso crítico y escalas sin reescribir nada.</p>
+    </div>
+    <div class="core-wrap">
+      <div class="core">
+        <span class="badge">El núcleo</span>
+        <h3>DataRoots Core</h3>
+        <p>Maestros, validaciones, históricos y trazabilidad. El motor de datos sobre el que se apoya toda la analítica.</p>
+      </div>
+      <div class="modules">
+        <div class="mod"><div class="mi">📥</div><div><h5>Captura no reglada</h5><p>Captura de datos por WhatsApp: OCR de albaranes, voz e imagen convertidos en dato estructurado.</p></div></div>
+        <div class="mod"><div class="mi">🗄️</div><div><h5>ETL / DataLake</h5><p>Integración con tu ERP (p. ej. Dynamics AX), Excel, APIs y correos, de forma gobernada.</p></div></div>
+        <div class="mod"><div class="mi">📊</div><div><h5>BI &amp; cuadros de mando</h5><p>Power BI con un dato único oficial, comparativos y alertas.</p></div></div>
+        <div class="mod"><div class="mi">📨</div><div><h5>Reporting automático</h5><p>Avisos personalizados, escalado y envíos por responsable.</p></div></div>
+        <div class="mod"><div class="mi">✏️</div><div><h5>Corrección + auditoría</h5><p>Edición embebida con justificación y rastro completo.</p></div></div>
+        <div class="mod"><div class="mi">🤖</div><div><h5>Analítica conversacional</h5><p>Consulta y análisis del dato en lenguaje natural con IA.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WOW -->
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow g">El impacto</span>
+      <h2 class="title">Lo que tu equipo gana <span class="gr">desde el primer despliegue</span></h2>
+    </div>
+    <div class="wow">
+      <div class="wcard"><div class="wi">⚡</div><h4>Cero fricción</h4><p>La gente sigue usando WhatsApp. La plataforma hace el resto, sin curva de aprendizaje.</p></div>
+      <div class="wcard"><div class="wi">🛡️</div><h4>Dato defendible</h4><p>Estandarizado con maestros y trazabilidad. Se sostiene en cualquier auditoría.</p></div>
+      <div class="wcard"><div class="wi">🎯</div><h4>Gestión por excepción</h4><p>El foco está en lo que se desvía y por qué, no en revisar todo a mano.</p></div>
+      <div class="wcard"><div class="wi">📩</div><h4>Acción inmediata</h4><p>Cada responsable recibe la parte que le toca, concreta y a tiempo.</p></div>
+      <div class="wcard"><div class="wi">🔄</div><h4>Ciclo cerrado</h4><p>Se corrige dentro del informe y queda justificado. El dato no se escapa.</p></div>
+      <div class="wcard"><div class="wi">🚀</div><h4>Velocidad</h4><p>De "me lo dijeron por chat" a "lo veo en el cuadro de mando" en minutos.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- KPIs -->
+<section class="sec alt">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Valor medible</span>
+      <h2 class="title">No vendemos promesas: <span class="bl">medimos antes y después.</span></h2>
+      <p class="lead">Definimos los KPIs contigo en el workshop y los seguimos en tiempo real desde el cuadro de mando.</p>
+    </div>
+    <div class="kpis">
+      <div class="kpi-col op">
+        <h4><span class="tag"></span> Operación</h4>
+        <ul>
+          <li>Tiempo de mensaje a dato en BD <svg class="spark" viewBox="0 0 70 22"><polyline points="0,18 14,15 28,16 42,9 56,7 70,3" fill="none" stroke="#2f6bff" stroke-width="2"/></svg></li>
+          <li>Tiempo de cierre (día/semana/mes) <svg class="spark" viewBox="0 0 70 22"><polyline points="0,4 14,7 28,6 42,12 56,15 70,19" fill="none" stroke="#2f6bff" stroke-width="2"/></svg></li>
+          <li>Tasa de errores y reprocesos <svg class="spark" viewBox="0 0 70 22"><polyline points="0,5 14,9 28,8 42,13 56,16 70,19" fill="none" stroke="#2f6bff" stroke-width="2"/></svg></li>
+          <li>Desviación detectada vs. corregida <svg class="spark" viewBox="0 0 70 22"><polyline points="0,18 14,14 28,15 42,8 56,6 70,3" fill="none" stroke="#2f6bff" stroke-width="2"/></svg></li>
+        </ul>
+      </div>
+      <div class="kpi-col gov">
+        <h4><span class="tag"></span> Gobernanza</h4>
+        <ul>
+          <li>Tiempo de reacción ante incidencias <svg class="spark" viewBox="0 0 70 22"><polyline points="0,4 14,8 28,7 42,12 56,16 70,19" fill="none" stroke="#11b07a" stroke-width="2"/></svg></li>
+          <li>% de responsables que actúan a tiempo <svg class="spark" viewBox="0 0 70 22"><polyline points="0,18 14,15 28,14 42,9 56,6 70,3" fill="none" stroke="#11b07a" stroke-width="2"/></svg></li>
+          <li>Correcciones con justificación <svg class="spark" viewBox="0 0 70 22"><polyline points="0,17 14,13 28,14 42,10 56,7 70,4" fill="none" stroke="#11b07a" stroke-width="2"/></svg></li>
+          <li>Auditoría: quién cambió qué y cuándo <svg class="spark" viewBox="0 0 70 22"><polyline points="0,16 14,13 28,12 42,9 56,6 70,3" fill="none" stroke="#11b07a" stroke-width="2"/></svg></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COLLAB -->
+<section class="sec" id="modelos">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Modelos de colaboración</span>
+      <h2 class="title">Empieza pequeño, escala con seguridad</h2>
+      <p class="lead">Tres formas de trabajar según tu madurez. Sin proyectos IT interminables: valor temprano y alcance ajustado a tu operación. La inversión se define a medida.</p>
+    </div>
+    <div class="plans">
+      <div class="plan">
+        <span class="tag">Empieza aquí</span>
+        <div class="name">Piloto (MVP)</div>
+        <div class="scope">Prueba de valor sobre un proceso crítico.</div>
+        <div class="price">A consultar <small>· según alcance</small></div>
+        <ul>
+          <li>1 canal de entrada (WhatsApp) + 1 proceso de captura</li>
+          <li>1 cuadro de mando Power BI (presupuesto vs. real)</li>
+          <li>1 envío automatizado por responsable</li>
+          <li>Edición básica + tabla de auditoría</li>
+        </ul>
+        <a class="pbtn" href="#contacto">Consultar el piloto</a>
+      </div>
+      <div class="plan feat">
+        <div class="ribbon">★ El más elegido</div>
+        <span class="tag">Implantación completa</span>
+        <div class="name">Completo</div>
+        <div class="scope">El ciclo cerrado, en toda su capacidad.</div>
+        <div class="price">A consultar <small>· a medida</small></div>
+        <ul>
+          <li>Varios flujos y tipologías de mensajes</li>
+          <li>Modelo de datos consolidado + maestros + validaciones</li>
+          <li>Cuadro de mando completo (detalle, comparativos, acumulados)</li>
+          <li>Ciclo cerrado avanzado: aprobaciones, escalado, justificaciones</li>
+        </ul>
+        <a class="pbtn" href="#contacto">Consultar alcance</a>
+      </div>
+      <div class="plan">
+        <span class="tag">Multi-área</span>
+        <div class="name">Enterprise</div>
+        <div class="scope">Para varias áreas, filiales y gobierno avanzado.</div>
+        <div class="price">A consultar <small>· corporativo</small></div>
+        <ul>
+          <li>Múltiples áreas / filiales, SLAs y alta disponibilidad</li>
+          <li>Seguridad y gobierno: roles, entornos, auditoría ampliada</li>
+          <li>Automatización y monitorización proactiva</li>
+          <li>Roadmap evolutivo 6–12 meses</li>
+        </ul>
+        <a class="pbtn" href="#contacto">Hablar con un experto</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ENFOQUE -->
+<section class="sec alt" id="enfoque">
+  <div class="wrap">
+    <div class="trust">
+      <div>
+        <span class="eyebrow">Nuestro enfoque</span>
+        <h3>Del dato disperso <span class="gr">al dato que decide.</span></h3>
+        <p>Aplicamos precisión industrial a tus datos: capturamos lo que hoy se pierde en mensajes, notas de voz y fotos, lo estandarizamos contra tus maestros y lo convertimos en información fiable para evitar paradas y pérdidas, sea cual sea tu sector.</p>
+        <div class="tags">
+          <span>Enfoque industrial</span>
+          <span>España y Portugal</span>
+          <span>Del terreno al cuadro de mando</span>
+        </div>
+        <a class="btn btn-ghost" href="#contacto">Hablar con un experto →</a>
+      </div>
+      <div class="merge">
+        <div class="big">Dato <span class="plus">+</span> Decisión</div>
+        <div class="cap">Un método de principio a fin: del dato en bruto a la acción, con ciclo cerrado.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta" id="contacto">
+  <div class="wrap">
+    <span class="eyebrow">Siguiente paso</span>
+    <h2>De la idea a tu operación <span class="bl">en semanas</span></h2>
+    <p>Empezamos con un workshop de 90 minutos: procesos, maestros, responsables y un ejemplo real con tus datos. Sin compromiso.</p>
+    <div class="steps3">
+      <div class="s"><b>1 · Workshop 90 min</b>Procesos y ejemplo real</div>
+      <div class="s"><b>2 · Piloto MVP</b>Valor temprano medible</div>
+      <div class="s"><b>3 · Escalado</b>Más procesos y sectores</div>
+    </div>
+    <div class="form">
+      <form id="leadForm" action="mailto:info@dataroots.es" method="POST" enctype="text/plain">
+        <div class="row">
+          <div><label>Nombre</label><input name="nombre" required placeholder="Tu nombre"></div>
+          <div><label>Empresa</label><input name="empresa" placeholder="Tu empresa"></div>
+        </div>
+        <div class="row">
+          <div><label>Email</label><input type="email" name="email" required placeholder="tucorreo@empresa.com"></div>
+          <div><label>Teléfono</label><input name="telefono" placeholder="+34 ..."></div>
+        </div>
+        <label>¿Qué proceso te gustaría analizar primero?</label>
+        <textarea name="mensaje" rows="3" placeholder="Partes de campo, recepciones, producción, mantenimiento..."></textarea>
+        <button class="btn btn-primary" type="submit">Reservar mi workshop de 90 min →</button>
+      </form>
+      <div class="or">— o si lo prefieres —</div>
+      <div class="btns" style="justify-content:center">
+        <a class="btn btn-wa" href="https://wa.me/34644538173" target="_blank" rel="noopener">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.8 4.9-1.3A10 10 0 1 0 12 2Zm5.3 14.2c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .3-3.5-.7-2.9-1.2-4.7-4.2-4.9-4.4-.1-.2-1.1-1.5-1.1-2.8s.7-2 .9-2.3c.2-.2.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.4.6c-.2.2-.3.4-.1.7.2.3.9 1.4 1.9 2.3 1.3 1.1 2.3 1.5 2.6 1.6.2.1.4.1.6-.1l.9-1c.2-.2.4-.2.6-.1l1.9.9c.3.2.5.2.5.4.1.2.1.9-.1 1.3Z"/></svg>
+          WhatsApp directo
+        </a>
+        <a class="btn btn-ghost" href="mailto:info@dataroots.es">Escribir un email</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div class="col">
+        <a class="brand" href="#top">
+          <svg class="logo" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+            <rect x="4" y="17" width="4.2" height="9" rx="1.4" fill="#2f6bff"/>
+            <rect x="10.5" y="12" width="4.2" height="14" rx="1.4" fill="#16b8c8"/>
+            <rect x="17" y="14" width="4.2" height="12" rx="1.4" fill="#11b07a"/>
+            <rect x="23.5" y="8" width="4.2" height="18" rx="1.4" fill="#11b07a"/>
+          </svg>
+          <span>Data<span class="gr">Roots</span></span>
+        </a>
+        <p>La metodología que convierte datos dispersos en decisiones. Capturar, estandarizar, analizar y actuar, con ciclo cerrado.</p>
+        <div class="social">
+          <a href="https://www.linkedin.com/company/dataroots-es" aria-label="LinkedIn" target="_blank" rel="noopener">in</a>
+        </div>
+      </div>
+      <div class="foot-links">
+        <strong>Navegación</strong>
+        <a href="#reto">El reto</a>
+        <a href="#metodologia">Metodología</a>
+        <a href="#sectores">Sectores</a>
+        <a href="#plataforma">Plataforma</a>
+        <a href="#contacto">Contacto</a>
+      </div>
+      <div class="foot-links">
+        <strong>Contacto</strong>
+        <a href="mailto:info@dataroots.es">info@dataroots.es</a>
+        <a href="https://wa.me/34644538173" target="_blank" rel="noopener">WhatsApp</a>
+        <a href="https://www.linkedin.com/company/dataroots-es" target="_blank" rel="noopener">LinkedIn ↗</a>
+        <a href="#contacto">Formulario</a>
+      </div>
+    </div>
+    <div class="copy">
+      <span>© 2026 DataRoots. Todos los derechos reservados.</span>
+      <span>España y Portugal</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('leadForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    var f = e.target;
+    var nombre  = (f.nombre.value||'').trim();
+    var empresa = (f.empresa.value||'').trim();
+    var email   = (f.email.value||'').trim();
+    var tel     = (f.telefono.value||'').trim();
+    var msg     = (f.mensaje.value||'').trim();
+    var asunto  = 'Solicitud de workshop DataRoots' + (empresa ? ' · ' + empresa : '');
+    var cuerpo  =
+      'Nombre: ' + nombre + '\n' +
+      'Empresa: ' + empresa + '\n' +
+      'Email: ' + email + '\n' +
+      'Teléfono: ' + tel + '\n\n' +
+      'Proceso a analizar:\n' + msg + '\n';
+    window.location.href = 'mailto:info@dataroots.es'
+      + '?subject=' + encodeURIComponent(asunto)
+      + '&body=' + encodeURIComponent(cuerpo);
+  });
+</script>
+</body>
+</html>
