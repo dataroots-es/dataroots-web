@@ -1,0 +1,334 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Alcance y toma de requisitos · SAT Canarisol · DataRoots</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap');
+  :root{--green:#639B38;--leaf:#4E7C2C;--forest:#24331A;--orange:#F5A62A;--ink:#2C2B27;--gray:#55534C;--muted:#8A877E;--canvas:#FAF9F5;--soft:#EEF4E6;--softo:#FFF2DE;--line:#E6E2D8}
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{background:#e8e5dc;font-family:"Inter",-apple-system,"Segoe UI",Arial,sans-serif;color:var(--ink);font-size:13.5px;line-height:1.55;-webkit-font-smoothing:antialiased}
+  .doc{max-width:860px;margin:22px auto;background:#fff;box-shadow:0 18px 50px rgba(36,51,26,.18)}
+  .band{background:linear-gradient(120deg,#1a2612,#24331A 55%,#33491f);color:#fff;padding:28px 44px;border-bottom:4px solid var(--orange)}
+  .band .top{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+  .brand{font-family:"Poppins",sans-serif;font-weight:800;font-size:21px;letter-spacing:-.02em}
+  .brand span{color:var(--orange)}
+  .chip{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.26);border-radius:999px;padding:4px 12px;font-size:11px;font-weight:700}
+  h1{font-family:"Poppins",sans-serif;font-size:24px;font-weight:800;margin:14px 0 4px;letter-spacing:-.02em}
+  h1 em{font-style:normal;color:#a8cf7f}
+  .sub{color:#dbe6d0;font-size:13px;max-width:64ch}
+  .ref{color:#a8cf7f;font-size:12px;margin-top:8px}
+  .pad{padding:24px 44px 34px}
+  h2{font-family:"Poppins",sans-serif;font-size:16.5px;color:var(--leaf);font-weight:700;margin:28px 0 10px;padding-bottom:6px;border-bottom:2px solid var(--green)}
+  h2 .n{color:var(--orange);margin-right:8px}
+  p{margin:7px 0}
+  .lead{color:var(--gray)}
+  table{width:100%;border-collapse:collapse;margin:10px 0;font-size:12.5px}
+  th,td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
+  th{background:var(--green);color:#fff;font-family:"Poppins",sans-serif;font-weight:600;font-size:11px}
+  td.q b{color:var(--ink);font-size:13px}
+  td.q .ex{display:block;font-style:italic;color:var(--muted);font-size:11.5px;margin-top:3px}
+  td.a{background:var(--soft)}
+  input[type=text], textarea{width:100%;border:none;background:transparent;font-family:"Inter",sans-serif;font-size:13px;color:var(--leaf);font-weight:600;outline:none;padding:2px 0}
+  textarea{resize:none;overflow:hidden;min-height:24px}
+  input[type=text]::placeholder, textarea::placeholder{color:#b3bfa8;font-weight:400;font-style:italic}
+  input[type=text]:focus, textarea:focus{border-bottom:1.5px solid var(--green)}
+  .opts{display:flex;flex-wrap:wrap;gap:4px 16px;align-items:center}
+  .opts label{display:flex;align-items:center;gap:6px;cursor:pointer;font-size:12.5px;white-space:nowrap}
+  .opts input[type=checkbox]{width:16px;height:16px;accent-color:var(--green);cursor:pointer}
+  .opts .otra{flex:1;min-width:140px}
+  .note{background:var(--softo);border:1px solid #eed9ae;border-radius:10px;padding:12px 15px;font-size:12.5px;margin:12px 0}
+  .note b{color:#9a6d14}
+  .chkline{display:flex;align-items:flex-start;gap:9px;margin:8px 0;font-size:13px}
+  .chkline input[type=checkbox]{width:17px;height:17px;accent-color:var(--green);cursor:pointer;margin-top:2px;flex:none}
+  .chkline .hint{color:var(--muted);font-style:italic;font-size:11.5px}
+  .toolbar{position:sticky;top:0;z-index:9;background:var(--canvas);border-bottom:1px solid var(--line);padding:10px 44px;display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+  .toolbar .msg{font-size:11.5px;color:var(--muted)}
+  .toolbar .msg b{color:var(--leaf)}
+  .btn{font-family:"Poppins",sans-serif;font-weight:700;font-size:12.5px;border:none;border-radius:10px;padding:9px 16px;cursor:pointer}
+  .btn.primary{background:var(--green);color:#fff}
+  .btn.primary:hover{background:var(--leaf)}
+  .btn.ghost{background:#fff;color:var(--gray);border:1px solid var(--line)}
+  .finish{background:var(--soft);border:1px solid var(--line);border-left:4px solid var(--green);border-radius:0 12px 12px 0;padding:16px 18px;margin:26px 0 8px}
+  .finish .btn{margin-top:10px}
+  .foot{border-top:1px solid var(--line);margin-top:26px;padding-top:10px;font-size:10.5px;color:var(--muted);display:flex;justify-content:space-between;flex-wrap:wrap;gap:6px}
+  .pagebreak{page-break-before:always}
+  @media print{
+    html,body{background:#fff}
+    .doc{box-shadow:none;margin:0;max-width:100%}
+    .toolbar,.finish .btn,.noprint{display:none !important}
+    @page{size:A4;margin:12mm}
+    table,tr,.note{page-break-inside:avoid}
+    h2{page-break-after:avoid}
+    input[type=text],textarea{border:none}
+  }
+</style></head><body>
+
+<div class="doc">
+  <div class="toolbar noprint">
+    <div class="msg">✔ <b>Tus respuestas se guardan solas</b> en este navegador. Puedes cerrar y seguir otro día.</div>
+    <div style="display:flex;gap:8px">
+      <button class="btn ghost" onclick="if(confirm('¿Seguro que quieres borrar todas las respuestas?')){localStorage.removeItem(KEY);location.reload()}">Empezar de cero</button>
+      <button class="btn ghost" onclick="window.print()">Descargar PDF</button>
+      <button class="btn primary" onclick="enviar(this)">Enviar a DataRoots</button>
+    </div>
+  </div>
+
+  <div class="band">
+    <div class="top"><div class="brand">Data<span>Roots</span></div><div class="chip">Documento de inicio de proyecto</div></div>
+    <h1>Alcance y toma de <em>requisitos</em></h1>
+    <div class="sub">Programa de plantación y previsión de recolección · SAT Canarisol 479/05. Con vuestras respuestas prepararemos la visita y el arranque del proyecto, sin haceros perder tiempo repitiendo cosas.</div>
+    <div class="ref">Ref. OT-2026-002 / PF-2026-002 · Julio 2026 · v1.0</div>
+  </div>
+  <div class="pad">
+
+    <div class="note"><b>Cómo funciona (2 minutos de lectura).</b><br>
+      1 · Escribid directamente en las <b>casillas verdes</b>. Algunas ya vienen rellenas con lo que sabemos: si está bien, dejadlo; si no, borradlo y escribid lo vuestro.<br>
+      2 · Debajo de cada pregunta hay un <i>ejemplo en cursiva</i> de cómo responder.<br>
+      3 · Si algo no lo sabéis, escribid <b>"NO LO SÉ"</b>. No pasa nada: lo resolvemos juntos en la visita.<br>
+      4 · Escribid con libertad, con vuestras palabras. No hay respuestas incorrectas.<br>
+      Tiempo estimado: <b>30–45 minutos</b>. Al terminar, pulsad el botón verde de arriba (o el del final) y enviadnos el PDF a <b>info@dataroots.es</b>. Cualquier duda: +34 644 53 81 73.</div>
+
+    <h2><span class="n">1</span>Quién es quién — personas de contacto</h2>
+    <p class="lead">Necesitamos saber a quién llamar para cada cosa. Si una misma persona hace varios papeles, repetid su nombre sin problema.</p>
+    <table>
+      <tr><th style="width:31%">Rol</th><th style="width:25%">Nombre</th><th style="width:17%">Móvil</th><th>Correo</th></tr>
+      <tr><td class="q"><b>Responsable del proyecto</b><span class="ex">Nuestra persona de referencia en Canarisol para el día a día</span></td><td class="a"><input type="text" id="c1n"></td><td class="a"><input type="text" id="c1t"></td><td class="a"><input type="text" id="c1e"></td></tr>
+      <tr><td class="q"><b>Gerencia / dirección</b><span class="ex">Quien aprueba decisiones y cambios</span></td><td class="a"><input type="text" id="c2n"></td><td class="a"><input type="text" id="c2t"></td><td class="a"><input type="text" id="c2e"></td></tr>
+      <tr><td class="q"><b>Dirección técnica de cultivo</b><span class="ex">Quien decide qué se planta y valida la previsión</span></td><td class="a"><input type="text" id="c3n"></td><td class="a"><input type="text" id="c3t"></td><td class="a"><input type="text" id="c3e"></td></tr>
+      <tr><td class="q"><b>Encargado de campo 1</b><span class="ex">Quien apunta o comunica las plantaciones</span></td><td class="a"><input type="text" id="c4n"></td><td class="a"><input type="text" id="c4t"></td><td class="a"><input type="text" id="c4e"></td></tr>
+      <tr><td class="q"><b>Encargado de campo 2</b><span class="ex">Si hay más de uno</span></td><td class="a"><input type="text" id="c5n"></td><td class="a"><input type="text" id="c5t"></td><td class="a"><input type="text" id="c5e"></td></tr>
+      <tr><td class="q"><b>Quien mantiene el Excel</b><span class="ex">La persona que hoy rellena y guarda el Excel de plantación</span></td><td class="a"><input type="text" id="c6n"></td><td class="a"><input type="text" id="c6t"></td><td class="a"><input type="text" id="c6e"></td></tr>
+      <tr><td class="q"><b>Informática (si tenéis)</b><span class="ex">Persona o empresa externa. Si no tenéis, escribid "no tenemos"</span></td><td class="a"><input type="text" id="c7n"></td><td class="a"><input type="text" id="c7t"></td><td class="a"><input type="text" id="c7e"></td></tr>
+      <tr><td class="q"><b>Administración</b><span class="ex">Facturas, pagos y documentación</span></td><td class="a"><input type="text" id="c8n"></td><td class="a"><input type="text" id="c8t"></td><td class="a"><input type="text" id="c8e"></td></tr>
+    </table>
+
+    <h2><span class="n">2</span>Sedes y fincas</h2>
+    <table>
+      <tr><th style="width:50%">Pregunta</th><th>Vuestra respuesta</th></tr>
+      <tr><td class="q"><b>Oficina principal</b><span class="ex">Ya viene rellena: corregidla si no es correcta</span></td><td class="a"><textarea id="s1" data-prefill="TF-625, KM 0,5, 38588 Porís de Abona"></textarea></td></tr>
+      <tr><td class="q"><b>Otras sedes o almacenes</b><span class="ex">Ej.: almacén de envasado en Güímar</span></td><td class="a"><textarea id="s2"></textarea></td></tr>
+      <tr><td class="q"><b>Número de fincas en producción</b><span class="ex">Ya viene rellena: corregidla si no es correcta</span></td><td class="a"><textarea id="s3" data-prefill="Unas 13–14"></textarea></td></tr>
+      <tr><td class="q"><b>¿Tenéis lista de fincas y parcelas?</b><span class="ex">Vale un Excel, un papel escaneado o una foto. Podréis enviárnosla por correo</span></td><td class="a"><textarea id="s4"></textarea></td></tr>
+      <tr><td class="q"><b>Finca para la visita</b><span class="ex">¿Qué finca nos enseñaríais el primer día y quién estará allí?</span></td><td class="a"><textarea id="s5"></textarea></td></tr>
+    </table>
+
+    <h2><span class="n">3</span>Cómo trabajáis hoy (vuestra operación)</h2>
+    <p class="lead">Contadnos cómo es de verdad, no como debería ser. Cuanto más real, mejor arranca el proyecto.</p>
+    <table>
+      <tr><th style="width:50%">Pregunta</th><th>Vuestra respuesta</th></tr>
+      <tr><td class="q"><b>¿Cuántos productos / cultivos manejáis?</b><span class="ex">Ya viene rellena: corregidla si no es correcta</span></td><td class="a"><textarea id="o1" data-prefill="Unos 16"></textarea></td></tr>
+      <tr><td class="q"><b>¿Cómo se apunta hoy una plantación?</b><span class="ex">Ej.: "el encargado manda un WhatsApp al grupo y María lo pasa al Excel por la tarde"</span></td><td class="a"><textarea id="o2"></textarea></td></tr>
+      <tr><td class="q"><b>¿Cuántos grupos de WhatsApp usáis para esto y quiénes están en cada uno?</b><span class="ex">Ya viene rellena: corregidla si no es correcta</span></td><td class="a"><textarea id="o3" data-prefill="1–2 grupos (operativo y dirección técnica)"></textarea></td></tr>
+      <tr><td class="q"><b>¿Cuándo se apunta?</b><span class="ex">Marcad o escribid lo que sea vuestro caso</span></td><td class="a"><div class="opts">
+        <label><input type="checkbox" id="o4a">en el momento</label>
+        <label><input type="checkbox" id="o4b">al final del día</label>
+        <label><input type="checkbox" id="o4c">días después</label>
+        <input type="text" class="otra" id="o4x" placeholder="otra respuesta…"></div></td></tr>
+      <tr><td class="q"><b>¿Quién calcula hoy la previsión de recolección y cómo?</b><span class="ex">Ej.: "lo hace Pedro con el Excel, con los porcentajes de agarre que él conoce"</span></td><td class="a"><textarea id="o5"></textarea></td></tr>
+      <tr><td class="q"><b>¿Qué es lo que más falla hoy?</b><span class="ex">Ej.: datos que faltan, dos versiones del Excel, cambios que no se avisan…</span></td><td class="a"><textarea id="o6"></textarea></td></tr>
+      <tr><td class="q"><b>¿Qué os gustaría ver cada semana sin tener que pedirlo?</b><span class="ex">Ej.: kilos previstos por finca y semana, qué se plantó esta semana…</span></td><td class="a"><textarea id="o7"></textarea></td></tr>
+    </table>
+
+    <h2><span class="n">4</span>El Excel y los datos</h2>
+    <table>
+      <tr><th style="width:50%">Pregunta</th><th>Vuestra respuesta</th></tr>
+      <tr><td class="q"><b>¿Cómo se llama el Excel principal y quién lo guarda?</b><span class="ex">Ej.: "PLANTACION 2026.xlsx, lo tiene María en su ordenador"</span></td><td class="a"><textarea id="e1"></textarea></td></tr>
+      <tr><td class="q"><b>¿Hay más de un Excel para esto?</b><span class="ex">Ej.: uno de semillero y otro de plantación</span></td><td class="a"><textarea id="e2"></textarea></td></tr>
+      <tr><td class="q"><b>Los porcentajes de agarre, aprovechamiento, pesos y ciclos… ¿dónde están?</b></td><td class="a"><div class="opts">
+        <label><input type="checkbox" id="e3a">en el Excel</label>
+        <label><input type="checkbox" id="e3b">en la cabeza de alguien</label>
+        <label><input type="checkbox" id="e3c">en los dos sitios</label>
+        <input type="text" class="otra" id="e3x" placeholder="otra respuesta…"></div></td></tr>
+      <tr><td class="q"><b>¿Tenéis lista de variedades por producto?</b><span class="ex">Vale cualquier formato</span></td><td class="a"><textarea id="e4"></textarea></td></tr>
+    </table>
+    <div class="note"><b>Tres cosas que necesitamos que nos enviéis por correo junto con el PDF:</b><br>
+      <span class="chkline"><input type="checkbox" id="env1"><span>El Excel principal de plantación (tal cual está, sin arreglar nada).</span></span>
+      <span class="chkline"><input type="checkbox" id="env2"><span>Las listas de fincas, parcelas y variedades (en el formato que tengáis).</span></span>
+      <span class="chkline"><input type="checkbox" id="env3"><span>10–20 mensajes reales del grupo de WhatsApp (reenviados o en pantallazos): texto, algún audio y alguna foto.</span></span></div>
+
+    <h2><span class="n">5</span>Móviles y Telegram</h2>
+    <p class="lead">El equipo de campo seguirá mandando mensajes, audios y fotos como ahora, pero por Telegram (es gratuito y nos permite guiar el mensaje con botones). Solo necesitamos saber:</p>
+    <table>
+      <tr><th style="width:50%">Pregunta</th><th>Vuestra respuesta</th></tr>
+      <tr><td class="q"><b>¿Cuántas personas mandarán partes de plantación desde el campo?</b><span class="ex">Ej.: 3 encargados</span></td><td class="a"><textarea id="t1"></textarea></td></tr>
+      <tr><td class="q"><b>¿Qué móviles tienen?</b><span class="ex">Ej.: 2 Android y 1 iPhone</span></td><td class="a"><textarea id="t2"></textarea></td></tr>
+      <tr><td class="q"><b>¿Tienen Telegram instalado?</b><span class="ex">Si no, os pasamos una guía de 2 minutos</span></td><td class="a"><div class="opts">
+        <label><input type="checkbox" id="t3a">sí, todos</label>
+        <label><input type="checkbox" id="t3b">algunos</label>
+        <label><input type="checkbox" id="t3c">ninguno</label>
+        <input type="text" class="otra" id="t3x" placeholder="otra respuesta…"></div></td></tr>
+      <tr><td class="q"><b>¿Hay zonas de las fincas sin cobertura de móvil?</b><span class="ex">Ej.: "en la parte alta de Fonteide no hay cobertura" — el sistema guarda el mensaje y lo envía al recuperar señal</span></td><td class="a"><textarea id="t4"></textarea></td></tr>
+    </table>
+
+    <h2><span class="n">6</span>Informática (respondedlo aunque no tengáis informático)</h2>
+    <table>
+      <tr><th style="width:50%">Pregunta</th><th>Vuestra respuesta</th></tr>
+      <tr><td class="q"><b>¿Tenéis algún servidor u ordenador que esté siempre encendido en la oficina?</b><span class="ex">Si no, DataRoots os lo suministra y lo deja funcionando (opción recomendada de la oferta)</span></td><td class="a"><div class="opts">
+        <label><input type="checkbox" id="i1a">sí</label>
+        <label><input type="checkbox" id="i1b">no</label>
+        <label><input type="checkbox" id="i1c">no lo sé</label>
+        <input type="text" class="otra" id="i1x" placeholder="otra respuesta…"></div></td></tr>
+      <tr><td class="q"><b>Internet en la oficina</b></td><td class="a"><div class="opts">
+        <label><input type="checkbox" id="i2a">fibra</label>
+        <label><input type="checkbox" id="i2b">otro</label>
+        <label><input type="checkbox" id="i2c">no lo sé</label>
+        <input type="text" class="otra" id="i2x" placeholder="otra respuesta…"></div></td></tr>
+      <tr><td class="q"><b>¿Usáis correo de empresa (tipo nombre@canarisol...) o Microsoft 365?</b></td><td class="a"><div class="opts">
+        <label><input type="checkbox" id="i3a">sí</label>
+        <label><input type="checkbox" id="i3b">no</label>
+        <label><input type="checkbox" id="i3c">no lo sé</label>
+        <input type="text" class="otra" id="i3x" placeholder="otra respuesta…"></div></td></tr>
+      <tr><td class="q"><b>¿Cuántas personas verían el cuadro de mando (tablero de previsión)?</b><span class="ex">Ej.: 4 personas: gerencia, dirección técnica y 2 más</span></td><td class="a"><textarea id="i4"></textarea></td></tr>
+    </table>
+
+    <h2><span class="n">7</span>Datos y permisos</h2>
+    <table>
+      <tr><th style="width:50%">Pregunta</th><th>Vuestra respuesta</th></tr>
+      <tr><td class="q"><b>¿Quién autoriza compartir con DataRoots el Excel y los mensajes del grupo?</b><span class="ex">Nombre de la persona que da el visto bueno</span></td><td class="a"><textarea id="p1"></textarea></td></tr>
+      <tr><td class="q"><b>Fotos y audios del campo: proponemos guardarlos 12 meses como evidencia. ¿Conforme?</b></td><td class="a"><div class="opts">
+        <label><input type="checkbox" id="p2a">conforme</label>
+        <input type="text" class="otra" id="p2x" placeholder="preferimos otro plazo / otra respuesta…"></div></td></tr>
+      <tr><td class="q"><b>Contacto para protección de datos</b><span class="ex">Si no tenéis a nadie específico, escribid "el responsable del proyecto"</span></td><td class="a"><textarea id="p3"></textarea></td></tr>
+    </table>
+
+    <h2><span class="n">8</span>Para el primer día (visita a Canarias)</h2>
+    <p class="lead">La primera semana del proyecto vamos a veros. Marcad lo que ya tengáis encaminado:</p>
+    <div class="chkline"><input type="checkbox" id="d1"><span>El Excel principal y las listas, enviados unos días antes.</span></div>
+    <div class="chkline"><input type="checkbox" id="d2"><span>Los 10–20 mensajes reales de ejemplo, enviados unos días antes.</span></div>
+    <div class="chkline"><input type="checkbox" id="d3"><span>2–3 horas con el responsable del proyecto y la dirección técnica de cultivo.</span></div>
+    <div class="chkline"><input type="checkbox" id="d4"><span>30 minutos con los encargados de campo (les enseñamos lo que van a usar y escuchamos cómo trabajan).</span></div>
+    <div class="chkline"><input type="checkbox" id="d5"><span>Visita a una finca para ver cómo se planta y se comunica. <span class="hint">Muy recomendable</span></span></div>
+    <div class="chkline"><input type="checkbox" id="d6"><span>Una mesa con enchufe y, si es posible, el ordenador donde vive el Excel.</span></div>
+
+    <h2><span class="n">9</span>Cómo sabremos que esto funciona</h2>
+    <p class="lead">Marcad las que os valgan — y escribid las vuestras con vuestras palabras:</p>
+    <div class="chkline"><input type="checkbox" id="k1"><span>La previsión de kilos por finca, semana y variedad sale sola, sin que nadie tenga que montarla a mano.</span></div>
+    <div class="chkline"><input type="checkbox" id="k2"><span>Todo el mundo apunta las plantaciones igual y en el momento.</span></div>
+    <div class="chkline"><input type="checkbox" id="k3"><span>Gerencia y dirección técnica ven el tablero sin tener que pedir el Excel a nadie.</span></div>
+    <div class="chkline"><input type="checkbox" id="k4"><span>Si alguien cambia un dato (peso, agarre, fecha), queda registrado quién y cuándo.</span></div>
+    <table>
+      <tr><td class="q" style="width:50%"><b>Otras (en vuestras palabras)</b><span class="ex">Ej.: "que el comercial sepa qué habrá disponible dentro de 8 semanas"</span></td><td class="a"><textarea id="k5" style="min-height:48px"></textarea></td></tr>
+    </table>
+
+    <h2><span class="n">10</span>¿Algo más que debamos saber?</h2>
+    <table>
+      <tr><td class="q" style="width:50%"><b>Espacio libre</b><span class="ex">Cualquier cosa que creáis que nos ayuda: manías del proceso, épocas de mucho trabajo, cosas que ya probasteis y no funcionaron…</span></td><td class="a"><textarea id="libre" style="min-height:72px"></textarea></td></tr>
+    </table>
+
+    <div class="finish">
+      <b>¿Habéis terminado?</b> Pulsad <b>Enviar a DataRoots</b> y nos llegan vuestras respuestas al momento. Después, acordaos de mandarnos por correo el Excel, las listas y los mensajes de ejemplo a <b>info@dataroots.es</b>. Nosotros nos encargamos del resto.
+      <br><button class="btn primary" onclick="enviar(this)">Enviar a DataRoots</button>
+      <button class="btn ghost" onclick="window.print()">Descargar PDF</button>
+      <div id="estado" style="margin-top:10px;font-size:13px;display:none"></div>
+    </div>
+
+    <div class="foot"><span>DataRoots · dataroots.es · info@dataroots.es · +34 644 53 81 73</span><span>Documento de inicio de proyecto · SAT Canarisol · Julio 2026</span></div>
+  </div>
+</div>
+
+<script>
+// ================== CONFIG (cambiar por cliente) ==================
+const CONFIG = {
+  cliente: 'SAT Canarisol 479/05',
+  ref: 'OT-2026-002 / PF-2026-002',
+  webhook: 'https://n8n.dataroots.es/webhook/onboarding-alcance'
+};
+// ==================================================================
+const KEY = 'dataroots-alcance-canarisol-v1';
+const fields = document.querySelectorAll('input[type=text], textarea, input[type=checkbox]');
+
+function autogrow(el){ if(el.tagName==='TEXTAREA'){ el.style.height='auto'; el.style.height=(el.scrollHeight)+'px'; } }
+
+function save(){
+  const data = {};
+  fields.forEach(f => { data[f.id] = f.type==='checkbox' ? f.checked : f.value; });
+  try{ localStorage.setItem(KEY, JSON.stringify(data)); }catch(e){}
+}
+
+function load(){
+  let data = {};
+  try{ data = JSON.parse(localStorage.getItem(KEY)) || {}; }catch(e){}
+  fields.forEach(f => {
+    if(f.id in data){
+      if(f.type==='checkbox') f.checked = data[f.id]; else f.value = data[f.id];
+    } else if(f.dataset && f.dataset.prefill){
+      f.value = f.dataset.prefill; // prellenado editable: se puede borrar y escribir lo que se quiera
+    }
+    autogrow(f);
+  });
+}
+
+fields.forEach(f => {
+  f.addEventListener('input', () => { autogrow(f); save(); });
+  f.addEventListener('change', save);
+});
+window.addEventListener('load', load);
+window.addEventListener('beforeprint', () => document.querySelectorAll('textarea').forEach(autogrow));
+
+// ---- Recolector de respuestas (recorre el documento, sin mantenimiento por campo) ----
+function recogerRespuestas(){
+  const out = [];
+  let seccion = '';
+  const walk = document.querySelectorAll('.pad h2, .pad table, .pad .chkline, .pad .note');
+  walk.forEach(el => {
+    if(el.tagName === 'H2'){ seccion = el.textContent.trim(); return; }
+    if(el.classList.contains('chkline')){
+      const cb = el.querySelector('input[type=checkbox]');
+      const txt = el.textContent.trim().replace(/\s+/g,' ');
+      if(cb) out.push({seccion, pregunta: txt, respuesta: cb.checked ? 'Sí' : ''});
+      return;
+    }
+    if(el.classList.contains('note')){
+      el.querySelectorAll('.chkline').forEach(l => {
+        const cb = l.querySelector('input[type=checkbox]');
+        const txt = l.textContent.trim().replace(/\s+/g,' ');
+        if(cb) out.push({seccion, pregunta: 'Adjuntos: ' + txt, respuesta: cb.checked ? 'Marcado' : ''});
+      });
+      return;
+    }
+    // tabla
+    const ths = Array.from(el.querySelectorAll('th')).map(t => t.textContent.trim());
+    el.querySelectorAll('tr').forEach(tr => {
+      const q = tr.querySelector('td.q b');
+      const tds = Array.from(tr.querySelectorAll('td'));
+      if(!tds.length) return;
+      const pregunta = q ? q.textContent.trim() : (seccion + ' (fila)');
+      const partes = [];
+      tds.forEach((td, idx) => {
+        if(!td.classList.contains('a')) return;
+        const etiqueta = ths.length > idx && ths[idx] && !/pregunta|vuestra/i.test(ths[idx]) ? ths[idx] + ': ' : '';
+        // checkboxes con etiquetas
+        td.querySelectorAll('.opts label').forEach(l => {
+          const cb = l.querySelector('input[type=checkbox]');
+          if(cb && cb.checked) partes.push(l.textContent.trim());
+        });
+        // texto libre
+        td.querySelectorAll('input[type=text], textarea').forEach(f => {
+          if(f.value.trim()) partes.push(etiqueta + f.value.trim());
+        });
+        // celda con texto fijo de opciones sin campos (no aplica)
+      });
+      if(q || partes.length) out.push({seccion, pregunta, respuesta: partes.join(' · ')});
+    });
+  });
+  return out;
+}
+
+async function enviar(btn){
+  const estado = document.getElementById('estado');
+  const botones = document.querySelectorAll('.btn.primary');
+  botones.forEach(b => { b.disabled = true; b.textContent = 'Enviando…'; });
+  if(estado){ estado.style.display = 'block'; estado.style.color = '#55534C'; estado.textContent = 'Enviando vuestras respuestas…'; }
+  try{
+    const payload = { cliente: CONFIG.cliente, ref: CONFIG.ref, enviado: new Date().toLocaleString('es-ES'), respuestas: recogerRespuestas() };
+    const r = await fetch(CONFIG.webhook, { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(payload) });
+    if(!r.ok) throw new Error('HTTP ' + r.status);
+    botones.forEach(b => { b.textContent = '✔ Enviado'; });
+    if(estado){ estado.style.color = '#4E7C2C'; estado.innerHTML = '<b>✔ ¡Enviado! Hemos recibido vuestras respuestas.</b> Os contactaremos en breve. Si queréis copia, pulsad "Descargar PDF".'; }
+  }catch(e){
+    botones.forEach(b => { b.disabled = false; b.textContent = 'Enviar a DataRoots'; });
+    if(estado){ estado.style.color = '#9a6d14'; estado.innerHTML = '<b>No se ha podido enviar automáticamente.</b> No pasa nada: pulsad "Descargar PDF" y enviadnos el archivo a info@dataroots.es.'; }
+    else alert('No se ha podido enviar automáticamente. Descargad el PDF y enviadlo a info@dataroots.es.');
+  }
+}
+</script>
+</body></html>
